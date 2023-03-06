@@ -19,14 +19,14 @@ class SimpleReport:
     def most_frequent_company(companies):
         counter = 0
         enterprise = companies[0]["nome_da_empresa"]
+        nome_das_empresas = []
         for company in companies:
-            print("company['nome_da_empresa']", company["nome_da_empresa"])
-            current_frequency = companies.count(company["nome_da_empresa"])
-            # print("current_frequency", current_frequency)
+            nome_das_empresas.append(company["nome_da_empresa"])
+        for company in nome_das_empresas:
+            current_frequency = nome_das_empresas.count(company)
             if current_frequency > counter:
                 counter = current_frequency
-                enterprise = company["nome_da_empresa"]
-        # print("enterprise", enterprise)
+                enterprise = company
         return enterprise
 
     @staticmethod
