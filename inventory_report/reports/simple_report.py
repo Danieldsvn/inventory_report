@@ -9,11 +9,11 @@ class SimpleReport:
         expiration_product = SimpleReport.earlier_expiration_date(companies)
         companies_frequency = SimpleReport.most_frequent_company(companies)
         # print("companies_frequency", companies_frequency)
-        return f"""
-        Data de fabricação mais antiga: {older_product}
-        Data de validade mais próxima: {expiration_product}
-        Empresa com mais produtos: {companies_frequency}
-        """
+        return (
+            f"Data de fabricação mais antiga: {older_product}\n"
+            f"Data de validade mais próxima: {expiration_product}\n"
+            f"Empresa com mais produtos: {companies_frequency}"
+        )
 
     @staticmethod
     def most_frequent_company(companies):
