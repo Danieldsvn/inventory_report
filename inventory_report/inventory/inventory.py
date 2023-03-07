@@ -1,16 +1,24 @@
 from inventory_report.reports.simple_report import SimpleReport
 from inventory_report.reports.complete_report import CompleteReport
 import csv
+import json
 
 
 class Inventory:
     @staticmethod
     def import_data(path, report_type):
-        data = Inventory.csv_treatment(path)
-        if report_type == "simples":
-            return SimpleReport.generate(data)
-        if report_type == "completo":
-            return CompleteReport.generate(data)
+        if ".csv" in path:
+            data = Inventory.csv_treatment(path)
+            if report_type == "simples":
+                return SimpleReport.generate(data)
+            if report_type == "completo":
+                return CompleteReport.generate(data)
+        if ".json" in path:
+            data = Inventory.json_treatment(path)
+            if report_type == "simples":
+                return SimpleReport.generate(data)
+            if report_type == "completo":
+                return CompleteReport.generate(data)
 
     def csv_treatment(path):
         with open(path, encoding="utf8") as file:
@@ -29,3 +37,9 @@ class Inventory:
                         result.append(dictionary)
 
         return result
+
+    def json_treatment(path):
+        with open(path) as file:
+            json_data = file.read()
+            data = json.loads(json_data)
+        return data
