@@ -8,17 +8,9 @@ class Inventory:
     @staticmethod
     def import_data(path, report_type):
         if ".csv" in path:
-            data = Inventory.csv_treatment(path)
-            if report_type == "simples":
-                return SimpleReport.generate(data)
-            if report_type == "completo":
-                return CompleteReport.generate(data)
+            return Inventory.data_from_csv(path, report_type)
         if ".json" in path:
-            data = Inventory.json_treatment(path)
-            if report_type == "simples":
-                return SimpleReport.generate(data)
-            if report_type == "completo":
-                return CompleteReport.generate(data)
+            return Inventory.data_from_json(path, report_type)
 
     def csv_treatment(path):
         with open(path, encoding="utf8") as file:
@@ -43,3 +35,17 @@ class Inventory:
             json_data = file.read()
             data = json.loads(json_data)
         return data
+
+    def data_from_csv(path, report_type):
+        data = Inventory.csv_treatment(path)
+        if report_type == "simples":
+            return SimpleReport.generate(data)
+        if report_type == "completo":
+            return CompleteReport.generate(data)
+
+    def data_from_json(path, report_type):
+        data = Inventory.json_treatment(path)
+        if report_type == "simples":
+            return SimpleReport.generate(data)
+        if report_type == "completo":
+            return CompleteReport.generate(data)
