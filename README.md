@@ -1,13 +1,31 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# Inventory Report
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+2º projeto utilizando Python na Trybe. Um **gerador de relatórios** que recebe como entrada arquivos com dados de um estoque e gera, como saída, um relatório acerca destes dados. Paradigma POO com padrão de projeto Strategy.
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+## Tecnologias empregadas:
+
+Python, pytest
+
+## Habilidades praticadas
+
+  * Importação de dados de arquivo `CSV`
+
+  * Importação de dados de arquivo `JSON`
+
+  * Importação de dados de arquivo `XML`
+
+  * Teste com pytest
+
+  * Design Pattern Strategy
+
+## O que é de minha autoria:
+
+Os arquivos dos diretórios:
+
+* `tests/product/test_product.py`
+* `inventory_report/reports/simple_report.py`
+* `inventory_report/reports/complete_report.py`
+* `inventory_report/inventory/inventory.py`
+* `inventory_report/importer/importer.py`
+* `tests/product_report/test_product_report.py`
+
